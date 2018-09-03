@@ -1,0 +1,21 @@
+.row {
+    display: grid;
+    grid-template-columns: repeat(24, [col-start] 1fr);
+    column-gap: 10px;
+
+    >* {
+        grid-column: col-start / span 24;
+    }
+
+    @mixin atMedium {
+        &__column--medium-7 {
+            grid-column: auto / span 7;
+        }
+        &__column--medium-16 {
+            grid-column: auto / span 16;
+        }
+        &__column--medium-offset-9 {
+            grid-column-start: col-start 9;
+        }
+    }
+}
