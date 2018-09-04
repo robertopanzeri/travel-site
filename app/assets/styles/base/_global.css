@@ -9,3 +9,6 @@ img {
     max-width: 100%;
     height: auto;
 }
+a {
+    color: $mainOrange; /*It won't be the default blue anyway, so it makes sense to define it globally*/
+}
