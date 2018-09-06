@@ -1,7 +1,8 @@
 .generic-content-container {/*Non BEM compliant to avoid setting a class on each paragraph, especially for content provided by a publishing system*/
     p {
         line-height: 1.65;
-        margin: 1.2em 0;
+        margin: 0 0 1.2em 0;
+        font-weight:300;
         @mixin atSmall {
             font-size: 1.125rem;
         }
