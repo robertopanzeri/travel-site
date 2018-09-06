@@ -17,5 +17,11 @@
         &__column--medium-offset-9 {
             grid-column-start: col-start 9;
         }
+        &__column--medium-11 {
+            grid-column: auto / span 11;
+        }
+        &__column--medium-offset-14 {
+            grid-column-start: col-start 14;
+        }
     }
 }
