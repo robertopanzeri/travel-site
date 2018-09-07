@@ -1,30 +1,43 @@
 .row {
     display: grid;
     grid-template-columns: repeat(24, [col-start] 1fr);
-    column-gap: 10px;
+    column-gap: 1%;
 
     >* {
         grid-column: col-start / span 24;
+    }
+
+    &--t-padding {
+        padding-top: 80px;
     }
 
     @mixin atMedium {
         &__column--medium-7 {
             grid-column: auto / span 7;
         }
+
+        &__column--medium-8 {
+            grid-column: auto / span 8;
+        }
+
         &__column--medium-16 {
             grid-column: auto / span 16;
         }
+
         &__column--medium-11 {
             grid-column: auto / span 11;
         }
+
         &__column--medium-offset-9 {
             grid-column-start: col-start 9;
         }
-        &__column--medium-offset-10 {
-            grid-column-start: col-start 10;
-        }
+
         &__column--medium-offset-14 {
             grid-column-start: col-start 14;
+        }
+
+        &--column-gap-large {
+            column-gap: 4%;
         }
     }
 }
