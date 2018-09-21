@@ -37,7 +37,36 @@
         }
 
         &--column-gap-large {
-            column-gap: 4%;
+            grid-column-gap: 4%;
+        }
+    }
+    @mixin atLarge {
+        &__column--large-7 {
+            grid-column: auto / span 7;
+        }
+
+        &__column--large-8 {
+            grid-column: auto / span 8;
+        }
+
+        &__column--large-16 {
+            grid-column: auto / span 16;
+        }
+
+        &__column--large-11 {
+            grid-column: auto / span 11;
+        }
+
+        &__column--large-offset-9 {
+            grid-column-start: col-start 9;
+        }
+
+        &__column--large-offset-14 {
+            grid-column-start: col-start 14;
+        }
+
+        &--column-gap-large {
+            grid-column-gap: 4%;
         }
     }
 }
