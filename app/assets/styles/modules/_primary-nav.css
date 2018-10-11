@@ -1,0 +1,30 @@
+.primary-nav {
+    &--pull-right {
+        float: right;
+    }
+
+    &--v-padding {
+        padding: 12px 0;
+    }
+
+    ul {
+        /* Non BEM compliant to avoid setting a class on each list item and link. I'm also sure a primary nav will always consist of a ul/li/a list. */
+        margin: 0;
+        padding: 0;
+        @mixin clearfix;
+    }
+
+    li {
+        /* Non BEM compliant to avoid setting a class on each list item and link. I'm also sure a primary nav will always consist of a ul/li/a list. */
+        list-style: none;
+        float: left;
+        padding-right: 20px;
+    }
+
+    a {
+        /* Non BEM compliant to avoid setting a class on each list item and link. I'm also sure a primary nav will always consist of a ul/li/a list. */
+        color: $white;
+        text-decoration: none;
+        font-weight: 300;
+    }
+}
