@@ -1,27 +1,12 @@
+var Person = require('./modules/Person'); // require is a Node command, not a runtime browser command
+
+//access or call exported/exposed parts of the Person file. It can be whole object constructor function or just object properties or functions
 /*
-console.log("Hello, my name is John Doe and my favorite color is blue.");
-console.log("Hello, my name is Jane Smith and my favorite color is green.");
-
-function person(name, favColor) {
-    console.log("Hello, my name is " + name + " and my favorite color is " + favColor + ".");
-}
-
-person("John Doe", "blue");
-person("Jane Smith", "green");
+console.log(Person.exampleProperty);
+Person.exampleFunction();
 */
-
-/*
-var john = {
-    name: "John Doe",
-    favoriteColor: "blue",
-    greet: function (name, favColor) {
-        console.log("Hello, my name is " + this.name + " and my favorite color is " + this.favoriteColor + ".");
-    }
-}
-
+var john = new Person("John Doe", "blue"); // a new instance of the Person object based on its constructor function
 john.greet();
-*/
 
-function Person() { // Constructor
-
-}
+var jane = new Person("Jane Smith", "green");
+jane.greet();
