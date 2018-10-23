@@ -103,20 +103,23 @@ var MobileMenu = function () {
     function MobileMenu() {
         _classCallCheck(this, MobileMenu);
 
-        /* spaghetti Js
-        $('.site-header__menu-icon').click(function() { // selecting from the DOM + event handling
-            console.log("Clicked menu icon"); // defining functionality
+        /* spaghetti Js: everything together (selecting from the DOM + event handling + defining functionality)
+        $('.site-header__menu-icon').click(function() {
+            console.log("Clicked menu icon");
         });
         */
-        this.menuIcon = (0, _jquery2.default)('.site-header__menu-icon'); // selecting from the DOM
-        this.menuContent = (0, _jquery2.default)('.site-header__menu-content'); // selecting from the DOM
+        // selecting from the DOM
+        this.siteHeader = (0, _jquery2.default)('.site-header');
+        this.menuIcon = (0, _jquery2.default)('.site-header__menu-icon');
+        this.menuContent = (0, _jquery2.default)('.site-header__menu-content');
+        // activating events handler
         this.events();
     }
 
     _createClass(MobileMenu, [{
         key: 'events',
         value: function events() {
-            //event handling
+            //events handling
             //this.menuIcon.click(this.toggleMenu); // method toggleMenu is not called directly, in it the 'this' will refer to the object that the method was called on (menuIcon)
             this.menuIcon.click(this.toggleMenu.bind(this)); // passing to method toggleMenu the same 'this' reference used in the events method
         }
@@ -124,7 +127,10 @@ var MobileMenu = function () {
         key: 'toggleMenu',
         value: function toggleMenu() {
             // defining functionality
-            this.menuContent.toggleClass('site-header__menu-content--is-visible'); // 'this' refers to the same object as in events
+            // 'this' refers to the same object as in events
+            this.menuContent.toggleClass('site-header__menu-content--is-visible');
+            this.siteHeader.toggleClass('site-header--is-expanded');
+            this.menuIcon.toggleClass('site-header__menu-icon--close-x');
         }
     }]);
 
