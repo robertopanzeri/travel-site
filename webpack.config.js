@@ -1,10 +1,13 @@
 var path = require('path'); //no need to install path, it's already part of Node
 
 module.exports = {
-    entry: "./app/assets/scripts/App.js",
+    entry: {
+        App: "./app/assets/scripts/App.js",
+        Vendor: "./app/assets/scripts/Vendor.js"
+    },
     output: {
         path: path.resolve(__dirname, "./app/temp/scripts"), //generates an absolute path, needed by webpack
-        filename: "App.js"
+        filename: "[name].js"
     },
     module: {
         loaders: [{

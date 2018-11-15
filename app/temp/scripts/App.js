@@ -11281,6 +11281,7 @@ var StickyHeader = function () {
     function StickyHeader() {
         _classCallCheck(this, StickyHeader);
 
+        this.lazyLoaded = (0, _jquery2.default)('.lazyload');
         this.siteHeader = (0, _jquery2.default)('.site-header');
         this.headerTriggerElement = (0, _jquery2.default)('.large-hero__title');
         this.createHeaderWaypoint();
@@ -11290,9 +11291,19 @@ var StickyHeader = function () {
         this.createPageSectionWaypoints();
 
         this.addSmoothScrolling();
+
+        this.refreshWaypoints();
     }
 
     _createClass(StickyHeader, [{
+        key: 'refreshWaypoints',
+        value: function refreshWaypoints() {
+            // When lazy loaded items are loaded, waypoints have to be recalculated
+            this.lazyLoaded.on('load', function () {
+                Waypoint.refreshAll(); // It refreshes ALL waypoints of the window, even if declared in other modules, so no need to repeat this code anywhere else
+            });
+        }
+    }, {
         key: 'addSmoothScrolling',
         value: function addSmoothScrolling() {
             this.headerLinks.smoothScroll();

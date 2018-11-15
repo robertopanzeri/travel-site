@@ -4,6 +4,7 @@ import smoothScroll from 'jquery-smooth-scroll';
 
 class StickyHeader {
     constructor() {
+        this.lazyLoaded = $('.lazyload');
         this.siteHeader = $('.site-header');
         this.headerTriggerElement = $('.large-hero__title');
         this.createHeaderWaypoint();
@@ -14,6 +15,14 @@ class StickyHeader {
 
         this.addSmoothScrolling();
 
+        this.refreshWaypoints();
+
+    }
+
+    refreshWaypoints() {// When lazy loaded items are loaded, waypoints have to be recalculated
+        this.lazyLoaded.on('load', function() {
+            Waypoint.refreshAll();// It refreshes ALL waypoints of the window, even if declared in other modules, so no need to repeat this code anywhere else
+        });
     }
 
     addSmoothScrolling() {
