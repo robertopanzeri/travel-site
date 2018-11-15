@@ -3,6 +3,7 @@
     margin-left: auto;
     margin-right: auto;
     padding: 0 18px;
+    overflow: hidden;
 
     &--no-padding-until-medium {
         padding: 0;
@@ -22,7 +23,11 @@
         max-width: 976px;
     }
 
-    &--b-margin-bottom {
+    &--narrow {
+        max-width: 470px;
+    }
+
+    &--b-margin-large {
         margin-bottom: 1rem;
 
         @mixin atSmall {

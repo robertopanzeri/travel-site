@@ -15,6 +15,10 @@
         color: $mainBlue;
     }
 
+    &--b-margin-small {
+        margin: 0 0 1.3rem;
+    }
+
     &__icon {
         display: block;
         margin-left: auto;
