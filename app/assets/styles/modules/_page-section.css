@@ -31,7 +31,8 @@
 
         @mixin atLarge {
             &.lazyloaded {
-                background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+                /* used relative paths instead of absolute root paths (/assets) to be able to publish to GitHub Pages url, which is the repo subdirectory instead of the base domain */
+                background: url('../../assets/images/testimonials-bg.jpg') top center no-repeat;
                 background-size: cover;
             }
         }
