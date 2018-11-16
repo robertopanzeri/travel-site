@@ -1,4 +1,4 @@
-.row {
+.cssgrid .row { /* modernizr class for css grid feature */
     display: grid;
     grid-template-columns: repeat(24, [col-start] 1fr);
     column-gap: 1%;
